@@ -15,6 +15,7 @@ To get started with the bot, follow these simple steps:
    - `api_id`
    - `api_hash`
    - `phone_number`
+and some cookies, you can find place for them easily by seraching for "cookies"
 
 2. Join the Telegram group: [@fluxbot_pool_sniper](https://t.me/fluxbot_pool_sniper) to enable the bot to function.
 
