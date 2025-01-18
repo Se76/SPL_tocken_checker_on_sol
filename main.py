@@ -401,16 +401,16 @@ global global_address
 global_address = None
 
 
-def functions(afd_hui):
-    info = nameAndSymbole(afd_hui)
+def functions(address):
+    info = nameAndSymbole(address)
     for key, val in info.items():
         print(f'{key}: {val}')
 
-    solscan = solcanApi(afd_hui)
+    solscan = solcanApi(address)
     for key1, val1 in solscan.items():
         print(f'{key1}: {val1}')
 
-    dct = lp_checker(afd_hui, solscan['updateAuthority'])
+    dct = lp_checker(address, solscan['updateAuthority'])
     for key2, val2 in dct.items():
         print(f'{key2}: {val2}')
 
@@ -463,10 +463,12 @@ async def process_address(address: str) -> None:
     for keyy, itemm in res.items():
         print(keyy, itemm)
 
+    # and dct['transferedSolanaToLp'] >= 4.0 and dct['transferedSolanaToLp'] <= 25.0\
+    # and res['percentage'] >= 60 and res['percentage'] <= 101
     if solscan['Authority'] == False and dct['RUG'] == False \
         and solscan['updateAuthority'] != 'TSLvdd1pWpHVjahSpsvCXUbgwsL3JAcvokwaKt1eokM'\
         and dct['transferedSolanaToLp'] >= 4.0 and dct['transferedSolanaToLp'] <= 25.0\
-        and res['percentage'] >= 60 and res['percentage'] <= 101 : # and int(info['current_mcap']) > 6000
+        and res['percentage'] >= 72 and res['percentage'] <= 95 :
 
 
 
